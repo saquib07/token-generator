@@ -1,12 +1,12 @@
 import './App.css';
-import Webform from './components/Webform';
+import Tokens from './components/Tokens';
+
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Token Generator Application</h1>
-      <Webform/>
+      <Tokens />
     </div>
   );
 }
