@@ -11,16 +11,24 @@ const [redTokens, setRedTokens] = useState(0);
 const [redPrefix, setRedPrefix] = useState('');
 const [redPerRow, setRedPerRow] = useState(0);
 
+const [blueTokenShown, setBlueTokenShown] = useState(false);
+const [redTokenShown, setRedTokenShown] = useState(false);
+
+const handleClick = event => {
+   setBlueTokenShown(true);
+   setRedTokenShown(true);
+};
+
 
 // Creating function to capture/console values of the input field
-  function generateTokens(e) {
-    console.log(blueTokens);
-    console.log(bluePrefix);
-    console.log(bluePerRow);
-    console.log(redTokens);
-    console.log(redPrefix);
-    console.log(redPerRow);   
-  }
+  // function generateTokens() {
+  //   console.log(blueTokens);
+  //   console.log(bluePrefix);
+  //   console.log(bluePerRow);
+  //   console.log(redTokens);
+  //   console.log(redPrefix);
+  //   console.log(redPerRow);   
+  // }
 
 // Creating function to reset the value of input field to initial state once clear button is clicked
   function resetInputFields(){
@@ -30,6 +38,8 @@ const [redPerRow, setRedPerRow] = useState(0);
     setRedTokens(0);
     setRedPrefix('');
     setRedPerRow(0);
+    setBlueTokenShown(false);
+    setRedTokenShown(false);
   }
 
   return (
@@ -66,8 +76,25 @@ const [redPerRow, setRedPerRow] = useState(0);
 
         <div className='tokenform-btns'>
             <Button className='btn-sp' variant="contained" type='submit' 
-             onClick={generateTokens}>Generate</Button>
+             onClick={handleClick}>Generate</Button>
             <Button variant="contained" type='reset' onClick={resetInputFields}>Clear</Button>
+
+            {blueTokenShown && (
+              <div>
+                <div className='token-box-blue'>
+                  <h2>{blueTokens} {bluePrefix}</h2>
+                </div>
+              </div>
+            )}
+
+            {redTokenShown && (
+              <div>
+                <div className='token-box-red'>
+                  <h2>{redTokens} {redPrefix}</h2>
+                </div>
+              </div>
+            )}
+
         </div>
      
     </div>

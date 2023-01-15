@@ -9,3 +9,30 @@ input{
         width: 200px;
         text-align: left;
 }
+.token-box-blue{
+    height: 50px;
+    width: 50px;
+    border: 2 px solid black;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 20px;
+    display: inline-block;
+    
+}
+
+.token-box-red{
+    height: 50px;
+    width: 50px;
+    border: 2 px solid black;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    display: inline-block;
+    align-items:center;
+    justify-content:center;
+}
